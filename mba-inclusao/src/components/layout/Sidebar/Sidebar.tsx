@@ -21,6 +21,7 @@ import {
   Layers,
   Moon,
   Sun,
+  FileText,
 } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import { getNavigationForRole } from '@/config/navigation';
@@ -41,6 +42,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   Sparkles,
   BookOpen,
   Layers,
+  FileText,
 };
 
 interface SidebarProps {
@@ -133,24 +135,26 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
           onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
         >
           {isUserMenuOpen && (
-             <div style={{ position: 'absolute', bottom: '100%', left: '16px', right: '16px', marginBottom: '8px', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-md)', border: '1px solid var(--surface-border-strong)', boxShadow: 'var(--shadow-xl)', zIndex: 50 }} onClick={e => e.stopPropagation()}>
-               <div style={{ fontSize: '13px', fontWeight: 'bold', borderBottom: '1px solid var(--surface-border)', paddingBottom: '8px', marginBottom: '8px' }}>Minha Conta</div>
-               <button 
-                 onClick={() => setThemeMode(themeMode === 'light' ? 'dark' : 'light')} 
-                 style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px', borderRadius: '6px', fontSize: '14px', color: 'var(--text-primary)', textAlign: 'left' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    {themeMode === 'light' ? <Moon size={16}/> : <Sun size={16}/>} Tema Visual
-                  </span>
-                  <span style={{ fontSize: '12px', color: 'var(--text-tertiary)' }}>{themeMode === 'light' ? 'Mudar p/ Escuro' : 'Mudar p/ Claro'}</span>
-               </button>
-               <button style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '8px', padding: '8px', borderRadius: '6px', fontSize: '14px', color: 'var(--text-primary)', marginTop: '4px' }} onClick={() => alert('Troca de senha (Mock)')}>
-                  <Settings size={16}/> Redefinir Senha
-               </button>
-               <div style={{ margin: '8px 0', borderTop: '1px solid var(--surface-border)' }} />
-               <button style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '8px', padding: '8px', borderRadius: '6px', fontSize: '14px', color: 'var(--accent-danger)' }}>
-                  <LogOut size={16}/> Sair do Sistema
-               </button>
-             </div>
+             <>
+               <div style={{ position: 'fixed', inset: 0, zIndex: 40 }} onClick={(e) => { e.stopPropagation(); setIsUserMenuOpen(false); }} />
+               <div style={{ position: 'absolute', bottom: '100%', left: '16px', right: '16px', marginBottom: '8px', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-lg)', padding: 'var(--space-md)', border: '1px solid var(--surface-border-strong)', boxShadow: 'var(--shadow-xl)', zIndex: 50 }} onClick={e => e.stopPropagation()}>
+                 <div style={{ fontSize: '13px', fontWeight: 'bold', borderBottom: '1px solid var(--surface-border)', paddingBottom: '8px', marginBottom: '8px' }}>Minha Conta</div>
+                 <button 
+                   onClick={() => setThemeMode(themeMode === 'light' ? 'dark' : 'light')} 
+                   style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '8px', borderRadius: '6px', fontSize: '14px', color: 'var(--text-primary)', textAlign: 'left' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      {themeMode === 'light' ? <Moon size={16}/> : <Sun size={16}/>} Tema Visual
+                    </span>
+                 </button>
+                 <button style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '8px', padding: '8px', borderRadius: '6px', fontSize: '14px', color: 'var(--text-primary)', marginTop: '4px' }} onClick={() => alert('Troca de senha (Mock)')}>
+                    <Settings size={16}/> Redefinir Senha
+                 </button>
+                 <div style={{ margin: '8px 0', borderTop: '1px solid var(--surface-border)' }} />
+                 <button style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '8px', padding: '8px', borderRadius: '6px', fontSize: '14px', color: 'var(--accent-danger)' }}>
+                    <LogOut size={16}/> Sair do Sistema
+                 </button>
+               </div>
+             </>
           )}
 
           <div className={styles.userInfo}>

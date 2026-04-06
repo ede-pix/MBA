@@ -44,3 +44,18 @@ O banco roda através dos MockStates dentro da pasta `src/data/`.
 1. Rode `npm run dev`.
 2. Acesse `http://localhost:3000`.
 3. Utilize a função revolucionária no cabeçalho: **"DEV ROLE SWITCHER"**. Com 1 único clique no icone de **Inseto (Bug)** lá em cima, você pode *se transformar em outro profissional* do RBAC na mesma hora! Brinque de ser "Administrador" e ter a liberdade da tela cheia, mude para "Regente" e veja o painel inteiro sumir da sua visão por privacidade, experimentando totalmente os muros protetivos que construímos!
+
+---
+
+## 📜 Histórico de Changelog (Atualizações Recentes)
+
+### v1.1.0 — Aprofundamento Pedagógico e UX Premium
+*   **[Engine] Markdown Direto:** Criada sub-engine `markdownParser.ts` sem dependências externas (`npm`) que absorve texto bruto e constrói HTML higienizado com Injeção de Variáveis CSS Nativas. Ativada em `.md` local e campos ricos de formulário para estilização flexível, viabilizando o parse completo de *h1 a h3*, *Listas estruturadas* e *Negritos* na página `/documentacao`.
+*   **[Docs] Leitor Nativo de Documentação (Server Components):** Rota `/documentacao` conectada ao menu central. Lê via runtime de servidor o próprio `README.md` injetando na arquitetura visual com a engine Markdown personalizada.
+*   **[Gestor] Dashboard do Diretor (Helicopter View):** Remoção de cards avulsos genéricos ao logar como Diretor; Substituição pesada na tela-mestra `/dashboard` por *Sessões Modulares* separando Infraestrutura, Métricas de AEE Clínico e Tracking de Mediação por Reforço.
+*   **[Saúde Clínica] Expansão Estrutural do PEI (Legislação Integrada):** Evolução substancial no modelo mocado (`mockPeis`) e no Viewport de Edição para aderir a diretrizes MEC de Educação Especial.
+    *   De um esqueleto de *4 Abas* rápidas passamos para **6 Abas densas**.
+    *   Acréscimo de "Histórico Escolar Anterior" e "Recursos Assistivos Físicos e Tecnológicos" (ex: seleção de cadeira prototipada para PCD, Pranchas de Comunicação Alternativa PCS e Softwares T.A).
+    *   Substituição das textareas base por caixas de leitura estilizadas (Renderizando *Markdown* e *Placeholder Text* rico caso o campo esteja vazio por omissão do corpo docente).
+*   **[UX] Controle de Tema Independente (Dark Mode):** O modal fixo de conta introduziu botão de transição visual. Troca no `data-theme` base injeta dezenas de cores escuras sobrepostas no sistema de CSS principal, transformando o "Cloud Background" num Dark Mode real.
+*   **[Acessibilidade UX] Overlay Fantasma no Perfil:** Modal de usuário agora reconhece clique fora de área (Outside Click Listener via película z-index fixa) encerrando o comportamento estrito de necessitar clicar no rosto do usuário novamente para fechar.

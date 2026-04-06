@@ -9,6 +9,7 @@ import Badge from '@/components/ui/Badge/Badge';
 import Button from '@/components/ui/Button/Button';
 import Tabs, { TabType } from '@/components/ui/Tabs/Tabs';
 import { ArrowLeft, Brain, Target, Shield, Stethoscope, Lock, CheckCircle2, Save, History, Laptop } from 'lucide-react';
+import { parseMarkdown } from '@/utils/markdownParser';
 import styles from './pei-details.module.css';
 
 export default function PeiDetailsPage() {
@@ -68,18 +69,27 @@ export default function PeiDetailsPage() {
   ) => (
     <div className={styles.formSection}>
       <h2>{icon} {title}</h2>
-      {fields.map(field => (
-        <div key={field.key} className={styles.formGroup}>
-          <label className={styles.label}>{field.label}</label>
-          <textarea 
-            className={styles.textarea} 
-            value={(peiData as any)[sectionKey][field.key]} 
-            disabled={isReadOnly}
-            onChange={(e) => handleChangeForm(sectionKey, field.key, e.target.value)}
-            placeholder={isReadOnly ? "Nenhum dado informado." : `Preencha sobre: ${field.label.toLowerCase()}`}
-          />
-        </div>
-      ))}
+      {fields.map(field => {
+        const val = (peiData as any)[sectionKey][field.key];
+        return (
+          <div key={field.key} className={styles.formGroup}>
+            <label className={styles.label}>{field.label}</label>
+            {isReadOnly ? (
+              <div 
+                style={{ background: 'var(--bg-tertiary)', padding: '16px', borderRadius: '8px', border: '1px dashed var(--surface-border-strong)', minHeight: '60px' }}
+                dangerouslySetInnerHTML={{ __html: val ? parseMarkdown(val) : '<p style="color:var(--text-muted);font-style:italic">Nenhum dado informado.</p>' }}
+              />
+            ) : (
+              <textarea 
+                className={styles.textarea} 
+                value={val} 
+                onChange={(e) => handleChangeForm(sectionKey, field.key, e.target.value)}
+                placeholder={`Preencha sobre: ${field.label.toLowerCase()} (Suporta formatação Markdown)`}
+              />
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 

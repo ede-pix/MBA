@@ -25,6 +25,13 @@ export const navigation: NavSection[] = [
         roles: ['super_admin', 'diretor', 'coordenador', 'professor_aee', 'professor_regente', 'professor_reforco'],
         description: 'Visão geral e métricas',
       },
+      {
+        label: 'Documentação',
+        href: '/documentacao',
+        icon: 'FileText',
+        roles: ['super_admin', 'diretor', 'coordenador', 'professor_aee', 'professor_regente', 'professor_reforco', 'aluno'],
+        description: 'Arquitetura e Projeto',
+      },
     ],
   },
   {

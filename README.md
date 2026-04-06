@@ -1,2 +1,0 @@
-# MBA
-MBA do Ede
