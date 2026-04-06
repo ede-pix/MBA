@@ -1,0 +1,74 @@
+.pageContainer {
+  animation: fadeIn 0.4s ease-out;
+  padding-bottom: var(--space-4xl);
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: var(--space-2xl);
+}
+
+.header {
+  margin-bottom: var(--space-2xl);
+  text-align: center;
+}
+
+.header h1 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.formCard {
+  background: var(--bg-card);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.formGroup {
+  margin-bottom: var(--space-lg);
+}
+
+.label {
+  display: block;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+.input {
+  width: 100%;
+  height: 48px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--surface-border-strong);
+  border-radius: var(--radius-md);
+  padding: 0 var(--space-md);
+  color: var(--text-primary);
+  font-size: var(--font-size-md);
+  outline: none;
+  transition: all var(--transition-base);
+}
+
+.input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-2xl);
+  justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

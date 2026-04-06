@@ -1,0 +1,27 @@
+.layoutWrapper {
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+.mainContent {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--header-height);
+  min-height: 100vh;
+  transition: margin-left var(--transition-slow);
+}
+
+.contentInner {
+  padding: var(--space-2xl);
+  max-width: var(--content-max-width);
+  animation: fadeIn 0.4s ease-out;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    margin-left: 0;
+  }
+
+  .contentInner {
+    padding: var(--space-base);
+  }
+}

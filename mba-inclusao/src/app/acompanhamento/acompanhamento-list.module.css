@@ -1,0 +1,52 @@
+.pageContainer {
+  animation: fadeIn 0.4s ease-out;
+}
+
+.header {
+  margin-bottom: var(--space-2xl);
+}
+
+.header h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-md);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+}
+
+.infoLabel {
+  color: var(--text-tertiary);
+  font-weight: var(--font-weight-medium);
+}
+
+.infoValue {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}

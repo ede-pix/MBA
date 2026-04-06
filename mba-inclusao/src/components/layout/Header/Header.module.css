@@ -1,0 +1,198 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: var(--header-height);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--surface-border);
+  z-index: var(--z-header);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-xl);
+  transition: left var(--transition-slow);
+}
+
+/* — Left Section — */
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-base);
+}
+
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.menuButton:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+}
+
+.breadcrumbSep {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* — Right Section — */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0; /* allows shrinking */
+}
+
+/* — Search — */
+.searchContainer {
+  position: relative;
+  flex: 1;
+  max-width: 320px;
+  min-width: 140px;
+}
+
+.searchInput {
+  width: 100%;
+  height: 38px;
+  padding: 0 var(--space-base) 0 44px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.searchInput::placeholder {
+  color: var(--text-muted);
+}
+
+.searchInput:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.searchIcon {
+  position: absolute;
+  left: var(--space-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* — Notification — */
+.notifButton {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.notifButton:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.notifDot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--accent-danger);
+  border: 2px solid var(--bg-glass);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* — Role Switcher (Dev Tool) — */
+.roleSwitcher {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.roleSwitcherLabel {
+  font-size: var(--font-size-xs);
+  color: var(--accent-warning);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.roleSwitcherSelect {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  outline: none;
+  padding: 2px 4px;
+}
+
+.roleSwitcherSelect option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+/* — Mobile — */
+@media (max-width: 768px) {
+  .header {
+    left: 0;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .roleSwitcherLabel {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .breadcrumb {
+    display: none;
+  }
+}

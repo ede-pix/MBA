@@ -1,0 +1,49 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Status variants */
+.draft {
+  background: var(--bg-elevated);
+  color: var(--text-secondary);
+  border: 1px solid var(--surface-border-strong);
+}
+
+.review {
+  background: var(--accent-warning-bg);
+  color: var(--accent-warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.approved {
+  background: var(--accent-success-bg);
+  color: var(--accent-success);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.active {
+  background: var(--accent-primary-glow);
+  color: var(--accent-primary-hover);
+  border: 1px solid rgba(99, 102, 241, 0.4);
+}
+
+.completed {
+  background: var(--surface-secondary);
+  color: var(--text-tertiary);
+  border: 1px solid var(--surface-border-strong);
+}
+
+.neutral {
+  background: var(--accent-info-bg);
+  color: var(--accent-info);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
