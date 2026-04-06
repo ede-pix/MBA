@@ -1,4 +1,4 @@
-# EduCare (Agregado ao Projeto Mídia 'Bloomy')
+# Bloomy Education
 **Plataforma Integrada de Saúde Mental, Inclusão Educacional e Gestão de PEI**
 
 Este projeto é um MVP funcional em formato de SaaS multi-tenancy para acompanhamento pedagógico integrado ao desenvolvimento neuroatípico, estruturando as documentações legais de Educação Especial.
@@ -8,7 +8,7 @@ Este projeto é um MVP funcional em formato de SaaS multi-tenancy para acompanha
 ## 🚀 Arquitetura e Engenharia:
 - **Framework Otimizado:** Construído e estabilizado em Next.js (App Router, *Server e Client Components misturados para SEO e reatividade*).
 - **TypeScript & CSS Modules:** Estilização purista focada em performance; sem bibliotecas pesadas de terceiros (como Material UI ou Bootstrap). Toda hierarquia é modular `(.module.css)`.
-- **Tema Híbrido & Acessibilidade:** Um Design System Light-Premium (Tons "EduCare"), estruturado centralmente em `globals.css` que inclui conversão bruta por CSS Data-Theme para **Alto Contraste Visual**, protegendo usuários com discromatopsia (Daltônicos e portadores de baixa visão).
+- **Tema Híbrido & Acessibilidade:** Um Design System Light-Premium (Tons "Bloomy"), estruturado centralmente em `globals.css` que inclui conversão bruta por CSS Data-Theme para **Alto Contraste Visual**, protegendo usuários com discromatopsia (Daltônicos e portadores de baixa visão).
 
 ## 🛡️ Gestão de Permissões (Role-Based Access Control - RBAC)
 O Sistema garante Governança Clínica e Educacional aderente às diretrizes brasileiras de dados (LGPD):
